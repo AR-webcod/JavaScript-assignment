@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Arrays Assignment (Q1–Q15)</title>
+<style>
+  body{font-family: Arial, sans-serif; line-height:1.5; padding:20px; background:#f5f7fb;}
+  h1{margin-bottom:10px;}
+  h2{margin-top:28px;}
+  .box{background:#fff; padding:14px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,.06); margin-top:10px;}
+  button{padding:8px 12px; border:none; border-radius:6px; cursor:pointer; background:#4a6cf7; color:#fff;}
+  input{padding:6px 8px; border:1px solid #ccc; border-radius:6px;}
+  .row{display:flex; gap:10px; flex-wrap:wrap;}
+  .small{font-size:12px; color:#666;}
+</style>
+</head>
+<body>
+
+<h1>JavaScript Arrays Assignment (Q1–Q15)</h1>
+
+<script>
+document.write("<h2>Q1</h2>");
+var students1 = [];
+document.write("Empty Array (Literal): " + students1 + "<br>");
+
+document.write("<h2>Q2</h2>");
+var students2 = new Array();
+document.write("Empty Array (Object): " + students2 + "<br>");
+
+document.write("<h2>Q3</h2>");
+var fruits = ["Apple", "Mango", "Banana"];
+document.write(fruits + "<br>");
+
+document.write("<h2>Q4</h2>");
+var numbers = [10, 20, 30];
+document.write(numbers + "<br>");
+
+document.write("<h2>Q5</h2>");
+var flags = [true, false, true];
+document.write(flags + "<br>");
+
+document.write("<h2>Q6</h2>");
+var mix = ["Ali", 25, true];
+document.write(mix + "<br>");
+
+document.write("<h2>Q7</h2>");
+var edu = ["SSC", "HSC", "BCS", "BS", "BCOM", "MS", "MPhil", "PhD"];
+for(var i=0;i<edu.length;i++){
+ document.write(edu[i] + "<br>");
+}
+
+document.write("<h2>Q8</h2>");
+var names = ["Ali", "Ahmed", "Sara"];
+var marks = [400, 450, 300];
+for(var i=0;i<names.length;i++){
+ var per = (marks[i]/500)*100;
+ document.write(names[i] + " Score: " + marks[i] + " Percentage: " + per + "%<br>");
+}
+
+document.write("<h2>Q10</h2>");
+var scores = [320, 230, 480, 120];
+scores.sort();
+document.write(scores + "<br>");
+
+document.write("<h2>Q11</h2>");
+var cities = ["Karachi", "Lahore", "Islamabad", "Quetta"];
+var selected = cities.slice(0,3);
+document.write(selected + "<br>");
+
+document.write("<h2>Q12</h2>");
+var arr = ["This", "is", "my", "cat"];
+var result = arr.join(" ");
+document.write(result + "<br>");
+
+document.write("<h2>Q13 (FIFO)</h2>");
+var devices1 = [];
+devices1.push("Keyboard");
+devices1.push("Mouse");
+devices1.push("Printer");
+document.write(devices1.shift() + "<br>");
+
+document.write("<h2>Q14 (LIFO)</h2>");
+var devices2 = [];
+devices2.push("Keyboard");
+devices2.push("Mouse");
+devices2.push("Printer");
+document.write(devices2.pop() + "<br>");
+</script>
+
+<h2>Q9 (Interactive Colors)</h2>
+<div class="box">
+  <div class="row">
+    <input id="colorInput" placeholder="Enter color">
+    <button onclick="addStart()">Add Start</button>
+    <button onclick="addEnd()">Add End</button>
+    <button onclick="removeStart()">Remove Start</button>
+    <button onclick="removeEnd()">Remove End</button>
+  </div>
+  <p id="colorOutput"></p>
+</div>
+
+<script>
+var colors = ["Red","Green","Blue"];
+function showColors(){
+ document.getElementById("colorOutput").innerHTML = colors.join(", ");
+}
+function addStart(){
+ var c = document.getElementById("colorInput").value;
+ if(c) colors.unshift(c);
+ showColors();
+}
+function addEnd(){
+ var c = document.getElementById("colorInput").value;
+ if(c) colors.push(c);
+ showColors();
+}
+function removeStart(){
+ colors.shift();
+ showColors();
+}
+function removeEnd(){
+ colors.pop();
+ showColors();
+}
+showColors();
+</script>
+
+<h2>Q15 Dropdown</h2>
+<div class="box">
+<script>
+var phones = ["Apple","Samsung","Motorola","Nokia","Sony","Haier"];
+document.write("<select>");
+for(var i=0;i<phones.length;i++){
+ document.write("<option>"+phones[i]+"</option>");
+}
+document.write("</select>");
+</script>
+</div>
+
+</body>
+</html>
